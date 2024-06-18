@@ -23,7 +23,7 @@ class BaseReaderWriter(ABC):
     def _check_all_same(input_list):
         # compare all entries to the first
         for i in input_list[1:]:
-            if i != input_list[0]:
+            if not np.allclose(i, input_list[0]):
                 return False
         return True
 
